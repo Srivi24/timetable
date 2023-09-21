@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetable</title>
+</head>
+<body>
+<h1>Time Table Entry</h1>
+<form action="/timetable/{{times}}" method="post">
+    {% for day in days %}
+        {% for time in times %}
+            <label>* Enter subject name for {{ day }}, {{time}}: </label><br>
+            <input type="text" name="{{day}}_{{time}}" required><br><br>
+        {% endfor %}
+    {% endfor %}
+    <button type="submit" value="submit">Next</button>
+</form>
+</body>
+</html>

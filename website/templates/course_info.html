@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Info</title>
+</head>
+<body>
+<h1>Course Information:</h1>
+<form action="/course_info/{{num_courses}}" method="post">
+  {% for i in range(num_courses) %}
+    <h3>Enter Course Details for Course {{i+1}}</h3>
+    <label>Code</label>
+    <input type="text" name="code_{{i+1}}" required>
+    <label>Name</label>
+    <input type="text" name="name_{{i+1}}" required>
+    <label>Number of Hours</label>
+    <input type="number" name="hours_{{i+1}}" required>
+    <label>Faculty Name</label>
+    <input type="text" name="faculty_{{i+1}}" required>
+    <label>Department</label>
+    <input type="text" name="department_{{i+1}}" required>
+  {% endfor %}
+  <button type="submit" value="submit">Download</button>
+</form>
+</body>
+</html>
